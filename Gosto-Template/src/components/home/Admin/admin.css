@@ -1,0 +1,119 @@
+.home__admin {
+  display: flex;
+  background-color: #d3c9c9;
+}
+.navbar__admin {
+  width: 20%;
+}
+.user__admin {
+  width: 80%;
+}
+.listFilm__header {
+  margin-top: 30px;
+}
+.listFilm__header .listFilm__header__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listFilm__header__nav__Show p {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.nav__search__Film label {
+  font-size: 20px;
+  margin-right: 20px;
+  color: #333;
+}
+#search__Film {
+  background-color: #ececec;
+  border: none;
+  padding: 10px;
+  border-radius: 4%;
+  color: #83878a;
+}
+#search__Film:focus {
+  outline: none;
+}
+
+.category__admin {
+  display: flex;
+}
+
+.contentWidth {
+  width: 77%;
+}
+.category {
+  box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+  background-color: #fff;
+  width: 23%;
+  height: 560px;
+  padding: 10px 0;
+  border-radius: 4px;
+  /* margin-top: 2px;
+    margin-left: 2px; */
+}
+.category img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  object-fit: contain;
+}
+.category span {
+  font-size: 16px;
+  margin: 10px 20px;
+  text-transform: capitalize;
+}
+.category .box {
+  transition: 0.5s;
+  padding: 0 20px;
+}
+.category .box:hover {
+  background-color: #ffe1e6;
+  cursor: pointer;
+}
+
+th, tr, td {
+  text-align: center;
+  font-size: 20px;
+  font-size: 100;
+  border: none;
+  background-color: #bac1bd;
+  line-height: 50px;
+}
+th {
+  width: 25%;
+}
+thead, tbody {
+  color: #333;
+  border: none;
+}
+.table__user {
+  width: 1270px;
+  text-align: center;
+  margin: 20px 0;
+  padding-bottom: 20px;
+}
+.table__user tr{
+  border-bottom: 10px solid #bac1bd;
+  font-size: 18px;
+}
+.table__user-body {
+  line-height: 60px;
+}
+.btn-update {
+  cursor: pointer;
+  color: green;
+  margin-right: 25px;
+}
+.btn-delete {
+  cursor: pointer;
+  color: red;
+  margin-left: 25px;
+}
+.row h1 {
+  padding: 20px 0 10px 40px;
+  font-size: 30px;
+}

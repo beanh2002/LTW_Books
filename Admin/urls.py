@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Allbook, Login,Signup, Xoa, Sua, Them, Comments,PostRatingAndComment,BillOrder, Bookid, Giaima, AllUser, Allcategory, SuaCategory, Themcategory, Xoacategory, Boughted, Userid, BoughtAC, HuyDon, search
+from .views import Allbook, Login,Signup, Xoa, Sua, Them, Comments,PostRatingAndComment,BillOrder, Bookid, Giaima, AllUser, Allcategory, SuaCategory, Themcategory, Xoacategory, Boughted, Userid, BoughtAC, HuyDon, search, RecommendView
 
 urlpatterns = [
     path('allbook',Allbook.as_view()),
@@ -23,4 +23,5 @@ urlpatterns = [
     path('BoughtAc',BoughtAC.as_view()),
     path('huydon/<int:id>',HuyDon.as_view()),
     path('search/<str:ten>',search.as_view()),
+    path('Recommend',RecommendView.as_view()),
 ]   

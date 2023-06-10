@@ -10,23 +10,34 @@ const Signup = () => {
     var username = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-    try {
-      axios.post("http://127.0.0.1:8000/Admin/signup", {
+
+    axios
+      .post("http://127.0.0.1:8000/Admin/signup", {
         UserName: username,
         Email: email,
         Password: password,
+      })
+      .then(function (response) {
+        navigate.push(`/login`);
+      })
+      .catch(function (error) {
+        if (error.response && error.response.status === 400) {
+          alert(
+            Object.keys(error.response.data)[0] +
+              ": " +
+              error.response.data[Object.keys(error.response.data)[0]]
+          );
+          // Additional handling for 400 status code
+        } else {
+          console.error("Error:", error.message);
+        }
       });
-      // localStorage.setItem('token',response.data['access__token']);
-      navigate.push(`/login`);
-    } catch (error) {
-      // console.error(error);
-      alert("Tài khoản hoặc mật khẩu không tồn tại");
-      // Handle the error
-    }
+    // localStorage.setItem('token',response.data['access__token']);
+    // navigate.push(`/login`);
   };
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form2">
+      <div className="Auth-form2">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center">
@@ -71,7 +82,7 @@ const Signup = () => {
             Forgot <a href="/#">password?</a>
           </p>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

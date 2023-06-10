@@ -32,15 +32,24 @@ const Login = () => {
           console.log(response.data);
           if (response.data.Roles.includes("Admin")) {
             navigate.push(`/admin`);
-          }else{
-          navigate.push(`/home`);
+          } else {
+            navigate.push(`/home`);
           }
         });
     } catch (error) {
-      // console.error(error);
-      alert("Tài khoản hoặc mật khẩu không tồn tại");
-      // Handle the error
+      if (error.response && error.response.status === 400) {
+        alert(
+          Object.keys(error.response.data)[0] +
+            ": " +
+            error.response.data[Object.keys(error.response.data)[0]]
+        );
+        // Additional handling for 400 status code
+      } else {
+        console.error("Error:", error.message);
+      }
     }
+    // localStorage.setItem('token',response.data['access__token']);
+    // navigate.push(`/login`);
   };
   return (
     <div className="Auth-form-container">

@@ -6,7 +6,7 @@ import { ADD } from "../../../controller/action";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-export const ProductItems = ({ cartItems }) => {
+export const RecommendCard = ({ cartItems }) => {
   const dispatch = useDispatch();
   const navigate = useHistory();
   const addToCart = (e) => {
